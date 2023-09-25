@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --Red: hsl(0, 78%, 62%);
+  --Cyan: hsl(180, 62%, 55%);
+  --Orange: hsl(34, 97%, 64%);
+  --Blue: hsl(212, 86%, 64%);
+  --Very-Dark-Blue: hsl(234, 12%, 34%);
+  --Grayish-Blue: hsl(229, 6%, 66%);
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+  --white: hsl(0, 0%, 100%);
+
+  --fw200: 200;
+  --fw400: 400;
+  --fw600: 600;
+}
+
+h1 {
+  color: var(--Very-Dark-Blue);
+  font-weight: var(--fw200);
+}
+
+h2 {
+  color: var(--Very-Dark-Blue);
+  font-weight: var(--fw600);
+}
+
+h3,
+h4,
+h5,
+h6 {
+  color: var(--Very-Dark-Blue);
+  font-weight: var(--fw600);
+  font-size: 1.2rem;
+}
+
+p {
+  color: var(--Grayish-Blue);
+  font-weight: var(--fw400);
+  font-size: 0.75rem;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--Very-Light-Gray);
+  padding: 5rem 2rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+
+.text-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.text-section > p {
+  font-size: 0.95rem;
+}
+
+.card-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 10px;
+  text-align: left;
+  padding: 2rem;
+  width: 300px;
+  height: 250px;
+  box-shadow: 0px 15px 35px 1px hsla(229, 100%, 72%, 0.1);
+}
+
+.supervisor {
+  background-image: url(images/icon-supervisor.svg);
+  background-repeat: no-repeat;
+  background-position: 85% 85%;
+  border-top: 4px solid var(--Cyan);
+}
+
+.team {
+  background-image: url(images/icon-team-builder.svg);
+  background-repeat: no-repeat;
+  background-position: 85% 85%;
+  border-top: 4px solid var(--Red);
+}
+
+.karma {
+  background-image: url(images/icon-karma.svg);
+  background-repeat: no-repeat;
+  background-position: 85% 85%;
+  border-top: 4px solid var(--Orange);
+}
+
+.calculator {
+  background-image: url(images/icon-calculator.svg);
+  background-repeat: no-repeat;
+  background-position: 85% 85%;
+  border-top: 4px solid var(--Blue);
+}
+
+@media (min-width: 900px) {
+  main {
+    gap: 3.25rem;
+  }
+  .card-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      ". . a a . ."
+      "b b a a c c"
+      "b b d d c c"
+      ". . d d . .";
+    gap: 2rem;
+  }
+
+  h1,
+  h2 {
+    font-size: 2.25rem;
+  }
+
+  p {
+    font-size: 0.85rem;
+  }
+
+  .text-section > p {
+    font-size: 1rem;
+    width: 500px;
+  }
+
+  .card {
+    width: 275px;
+    height: 250px;
+  }
+
+  .team {
+    grid-area: a;
+  }
+
+  .supervisor {
+    grid-area: b;
+  }
+
+  .calculator {
+    grid-area: c;
+  }
+
+  .karma {
+    grid-area: d;
+  }
+}
+
+@media (min-width: 1125px) {
+  .card {
+    width: 350px;
+  }
+}
